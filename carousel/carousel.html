@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="carousel.css"/>
+    </head>
+    <body>
+        <header>
+            <h1>
+                Thème: Quelques méthodes d’analyse multivariée utilisées en écologie et application sur des données réelles
+            </h1>
+        </header>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="mynavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#intro">Introduction</a></li>
+                        <li><a href="#cca">La CCA</a></li>
+                        <li><a href="#nmds">La NMDS</a></li>
+                        <li><a href="#resultats">Application & résultats</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="clearfix">
+            <article>
+            <p class="cit">
+                “Si vous ne pouvez expliquer un concept à un enfant de six ans, c'est que vous ne le comprenez pas complètement.”, Albert Einstein
+            
+            </p>
+            <h1>Introduction</h1>
+            
+            <section id="intro">
+    
+                <p>
+                     Le but de notre étude est d’approfondir nos connaissances sur la statistique multivariée, en appliquant des méthodes spécifiques à l’écologie. Ainsi, nous allons expliquer les communautés de bactéries vivants sur un site, par les variables météorologiques et environnementales caractérisant ce dernier. L'objectif est de caractériser les différents sites selon les communautés de bactéries qui s'y forment.
+                </p>
+                
+                <p>
+                      Au lieu de l’analyse de données, les écologistes privilégient les méthodes d’ordination. Ces méthodes sont des méthodes d’analyse de gradient qui se scindent en deux groupes : l’analyse de gradient indirect et l’analyse de gradient direct.
+                
+                </p>
+                <p>
+                    L’analyse indirect des gradients dont la Non Metric Multidimentional Scale (NMDS), est basée, soit sur des distances, soit sur l’étude de vecteurs propres. Quant à l’analyse directe dont l’Analyse Canonique des Correspondances (CCA : Canonical Correspondence Analysis), les modèles utilisés sont le modèle linéaire ou unimodal.
+                
+                </p>
+              
+                <p>
+                    En écologie, la dissimilarité entre les sites est mesurée par la diversité de leurs communautés d’espèces. Deux types de diversités se distinguent la diversité α et la diversité β. La première mesure la diversité des espèces au sein d’un même milieu ou d’un site et
+                    la deuxième mesure la diversité entre deux sites ou échantillons. Dans le cadre de cette étude la diversité β sera étudié grâce aux indices de dissimilarité de Bray-Curtis et Uni frac.
+                    Ainsi, étant donné qu’en écologie, les données ne suivent pas en général une distribution normale et que l’hypothèse d’homoscédasticité n’est pas vérifiée, les écologistes utilisent la PERMANOVA afin d’étudier l’influence de facteurs sur les communautés. Cette méthode, au lieu d’utiliser la loi de Fischer habituelle pour calculer la p-valeur, elle estime celle-ci à l’aide de permutations des données entres les groupes.
+                </p>
+            
+            </section>
+            <section id="cca">
+                <h1>La CCA</h1>
+                <p>
+                    L’analyse canonique des correspondances (CCA) est une extension multivariée de la méthode de l’ordonnancement des moyennes pondérées. Elle est utilisée en écologie afin de mettre en relation des espèces (animales ou végétales) et des variables environnementales. Ainsi, c’est une méthode qui est utilisée en disposant de deux types de données : un tableau de contingence ou d’abondance des espèces étudiées dans les différents sites et un tableau de variables environnementales caractérisant ces différents sites et desquelles sont extraits les gradients (axes d’ordonnancement) qui maximisent la séparation des communautés d’espèces
+                </p>
+                <p>
+                    L’objectif de la CCA est double : d’une part, déterminer les espèces qui constituent les différentes communautés et d’autre part, comment cette composition est modifiée par les variables environnementales. En tant que méthode d’analyse directe de gradient, CCA met donc en relation l’abondance ou l’occurrence des espèces avec les variables environnementales. L’étude des gradients permet de décrire et de visualiser les préférences d’habitat (niche) des différents taxons. La méthode CCA est plus adaptée dans la mesure où ces fonctions de préférences des espèces parmi différentes niches sont unimodales. L’unimodalité découle de la loi de tolérance de Shelford (1911) selon laquelle chaque espèce se développe à une valeur optimale de la variable environnementale et ne peut plus survivre quand cette valeur est très faible ou très élevée. Ainsi, des méthodes comme l’analyse canonique des corrélations et l’analyse des redondances ne sont pas convenables. Aussi, une régression multiple pour chaque espèce pourrait être utilisée afin d’étudier l’importance de chaque variable environnementale sur l’occurrence d’une espèce. Toutefois, une régression multiple ne convient pas. 
+                
+                </p>
+            
+            </section>
+            <section id="nmds">
+                <h1>NMDS</h1>
+                <p>
+                    Le Positionnement multidimensionnel non-métrique (NMDS : Non-metric Multidimensional Scaling) est une approche d’analyse de gradient indirect qui produit une ordination basée sur une matrice de distance ou de dissimilarité. Tout coefficient de dissimilarité ou mesure de distance, peut être utilisé pour construire la matrice de distance utilisée dans l’analyse. Nous utilisons, en règle générale, la distance de Bray Curtis.
+                </p>
+                <p>
+                    Contrairement aux méthodes qui consistent à maximiser la variance ou/et la corrélation entre des objets dans une ordination, la NMDS tente de représenter, autant que possible, la dissimilarité par paire entre les objets, dans un espace de faible dimension (idéalement deux ou trois dimensions).
+                
+                </p>
+                <p>
+                    Souvent dans les analyses, les objets sont représentées dans un espace à plusieurs dimensions, rendant la tâche compliquée, du fait qu’il est impossible de visualiser plus de trois dimensions. La méthode consiste donc à faire une représentation des relations entre les objets (échantillons, espèces) et descripteurs (variables) dans un nombre réduit de dimensions (axes), tout comme l’Analyse en Composantes Principales (ACP).
+                </p>
+                <p>
+                    Mais contrairement à l’ACP, les axes ne correspondent pas aux vecteurs propres. Il est donc, impossible de déduire une contribution linéaire des données par rapports aux nouveaux axes
+                
+                </p>
+               
+            
+            </section>
+            <section>
+                <h1>Application & résultats</h1>
+                <p>
+                    Dans cette partie, il s'agit d'implémenter ces méthodes ci-dessus sous R en les appliquant à des données fournies par des chercheurs. Nous étudierons la composition bactérienne de 54 échantillons. Ces échantillons sont prélevés sur trois types de plantes différentes situées à des zones différentes et à des dates différentes au cours de l’année: Chaque parcelle est divisée en trois zones, ce qui fait qu’il existe six zones de prélèvement. Ainsi, le but de l’analyse, est d’étudier l’influence des facteurs environnementaux et des conditions météorologiques sur la diversité microbienne observée dans les échantillons.Nous travaillerons sur deux bases de données différentes.
+                
+                </p>
+                <p>
+                    Nous disposons de deux jeux de données: Un premier jeu de données qui correspond au tableau de contingence des différentes espèces de bactéries, soit un tableau de 1123 lignes (espéces de bactéries) et 54 colonnes (54 échantillons).
+                </p>
+                <p>
+                    Le deuxième jeu de données contient en ligne les sites où les échantillons sont prélevés et en colonnes les variables météorologiques.
+                    les variables environnementales sont: le type de plantes où l'échantillon est prélevé, la fertilisation, la date de prélèvement
+                </p>
+            </section>
+        
+        </article>
+        <aside>
+            <div class="as">
+                <p>Compétences acquises</p>
+                <ol>
+                    <li>
+                        <p>Recherche:</p>
+                        <ul>
+                            <li>Assimilation de concepts mathématiques</li>
+                             <li>Compréhension d'articles scientifiques</li>
+                             <li>Aisance en anglais</li>
+                        </ul>
+                    
+                    </li>
+                    <li>
+                        <p>Implémentation:</p>
+                        <ul>
+                            <li>Python</li>
+                            <li>R</li>
+                            <li>Utilisation de Latex</li>
+                        </ul>
+                    
+                    </li>
+                </ol>
+            </div>
+        </aside>
+        
+        </div>
+        
+        
+        <section id="resultats">
+            
+            <div class="container">
+                <div class="red-divider"></div>
+                
+                <div id="mycarousel" class="carousel slide text-center" data-ride="carousel">
+                    <ol class="carousel-indicator">
+                        <li data-target="#mycarousel" data-slide-to="0"></li>
+                        <li data-target="#mycarousel" data-slide-to="1"></li>
+<!--                        <li data-target="#mycarousel" data-slide-to="2" class="active"></li> déroulement automatique-->
+                        <li data-target="#mycarousel" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="../images/diffplantes.PNG">
+                            <section class="inter">
+                                 <h5>Variables environnementales: Application NMDS</h5>
+                            <p >
+                                
+                                Ce graphique montre la composition bactérienne selon les types de plante. On constate donc, que les deux types de plante lolium_perenne et trifolium_repens sont très dissimilaires en termes de composition bactérienne, alors que les espèces Holcus_lanatus et lolium_perenne sont proches. Ce qui signifie que ces deux plantes ont en partie les mêmes espèces de bactéries. En règle générale, nous pouvons prédire, que les espèces ont une influence sur la composition microbienne.
+                            
+                            </p>
+                            </section>
+                           
+                        </div>
+                        
+                         <div class="item">
+                            <img src="../images/g_fert.png">
+                             <section class="inter">
+                                  <h5>Variables environnementales: Application NMDS</h5>
+                             <p >
+                                 
+                                 Ce graphe permet de visualiser l’impact de la fertilisation sur la composition bactérienne. L’emboîtement des ellipses représentant la fertilisation et la non-fertilisation, montre que l’influence de la fertilisation est plutôt faible, voir inexistante.
+                            </p>
+                             
+                             </section>
+                            
+                        </div>
+                        
+                         <div class="item">
+                            <img src="../images/g_date.png">
+                             <section class="inter">
+                                 <h5>Variables environnementales: Application NMDS</h5>
+                                <p>
+                                 
+                                 La répartition par rapport aux dates sur ce graphique révèle que l’influence de la date D1 est très dissimilaire par rapport aux autres dates. Par contre les campagnes des dates D2 et D3, sont proches en termes d’espèces de bactéries prélevées. D’où une influence significative des dates de campagnes sur la distribution des bactéries.
+                            
+                                 </p>
+                             
+                             </section>
+                             
+                        </div>
+                        <div class="item">
+                            <img src="../images/g_env.png">
+                            
+                             <section class="inter">
+                                 <h5>Variables environnementales: Application NMDS</h5>
+                                 <p>
+                                     Le graphe confirme les prédictions antécédentes, par rapport aux influences des variables sur la composition microbienne des échantillons. La longueur des flèches représentant les variables est proportionnelle à la variance de la variable en question, et implique une forte ou une faible influence sur la composition microbienne. Par conséquent, on peut voir que le type de plante et les dates de campagnes ont une forte influence, comparées à la fertilisation.
+                                 </p>
+                                 
+                            
+                            </section>
+                            
+                        </div>
+                        
+                        <div class="item">
+                            <img src="../images/cca_met.png">
+                            
+                             <section class="inter">
+                                 <h5>Variables météorologiques (3 jours avant le prélèvement): Application CCA</h5>
+                                 <p>
+                                     Selon le graphique ci dessus, les variables évapotranspiration et rayonnement global ont une plus grande influence que les variables hauteur des précipitation et amplitude thermique. En contrepartie, la vitesse du vent n’a pas une influence significative.
+                                 </p>
+                                 
+                            
+                            </section>
+                            
+                        </div>
+                        <div class="item">
+                            <img src="../images/g_env.png">
+                            
+                             <section class="inter">
+                                 <h5>Variables météorologiques (15 jours avant le prélèvement): Application CCA</h5>
+                                 <p>
+                                     L’influence des variables météorologiques quinze jours avant la récolte est similaire. En effet, la longueur des flèches les représentant sont pratiquement égales. Il semble de plus, que la variable V_D15 (vitesse du vent 15 jours avant le prélèvement) possède une influence plus significative, en comparaison à la variable V_D3 (vitesse du vent 3 jours avant le prélèvement).
+                                 </p>
+                                 
+                            
+                            </section>
+                            
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#mycarousel" data-slide="prev" role="button"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                    <a class="right carousel-control" href="#mycarousel" data-slide="next" role="button"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="foot">
+                <p>Contact:<span><a href="https://www.linkedin.com/in/abdoulaye-kebe-3a728ba3/"><img src="../images/linkin.jpg"/></a></span><span><img src="../images/logface.png"/></span></p>
+                <p><span class="glyphicon glyphicon-phone-alt"> : 0753744695  <span class="glyphicon glyphicon-phone-alt"></span> 0662539627</span>
+                <span class="glyphicon glyphicon-send"> layekebe98@hotmail.com</span>
+                </p>
+            </div>
+            
+        </footer>
+    </body>
+</html>
