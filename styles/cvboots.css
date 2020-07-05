@@ -122,7 +122,7 @@ section{
 .pg{
     height: 50px;
     overflow: hidden;
-    transition: 1.5s;
+    transition: 0.5s;
     transition-timing-function: ease;
 }
 .pg:hover{
@@ -359,7 +359,7 @@ section{
     height: 400px;
     overflow: hidden;
     background-color:ivory;
-    transition: 1.5s;
+    transition: 0.5s;
     transition-timing-function: ease;
     
     
