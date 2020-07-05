@@ -359,20 +359,20 @@ section{
     height: 400px;
     overflow: hidden;
     background-color:ivory;
-    transition: 0.5s;
+    transition: 1s;
     transition-timing-function: ease;
     
     
 }
 
 .col-sm-4:hover{
-    height: 600px;
+    height: 625px;
 }
 .description{
     text-align:center;
     padding-top: 50px;
     position: relative;
-    margin-bottom:25px;
+    
 }
 
 
