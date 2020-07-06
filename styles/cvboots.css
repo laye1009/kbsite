@@ -443,12 +443,12 @@ ol{
     
 }
 #centre ul{
-    padding-left: 90px;
+    padding-left: 40px;
 }
 .titr{
     text-align: center;
     margin-bottom: 15px;
-    margin-left: 88px;
+    margin-left: 40px;
     margin-right: 200px;
     background: #fff;
     
@@ -516,7 +516,7 @@ ol{
 }
 .divers{
     padding-top: 0px;
-    padding-left: 75px;
+    padding-left: 35px;
     background: #d82c2e;
     height: 500px;
 }
