@@ -438,7 +438,7 @@ ol{
 #centre{
     padding-top:25px;
     background: #d82c2e;
-    height: 550px;
+    height: auto;
     width: 100%;
     
 }
