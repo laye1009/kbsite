@@ -520,6 +520,9 @@ ol{
     background: #d82c2e;
     height: auto;
 }
+#dvr{
+    height:auto;
+}
 .divers h4{
     background: #fff;
     text-align: center;
