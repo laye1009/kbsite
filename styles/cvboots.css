@@ -519,9 +519,12 @@ ol{
     padding-left: 35px;
     background: #d82c2e;
     height: auto;
+    margin-bottom:15px;
 }
 #dvr{
     height:auto;
+    background: #d82c2e;
+    margin-top:15px;
 }
 .divers h4{
     background: #fff;
